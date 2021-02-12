@@ -9,10 +9,12 @@ def gen_pass(length):
     '''
     
     '''
-    if type(length) != int:
-        pswd="Length must be a Number"
+    # if type(length) != int:
+    #     pswd="Length must be a Number"
         
-    elif length <= 8:
+    # elif length <= 8:
+    #     pswd="Must be longer than 8"
+    if length <= 8:
         pswd="Must be longer than 8"
     else:
         strg = f'{letters}{numbs}{special_c}'
@@ -28,13 +30,18 @@ def pass_length():
     ''' 
     Get the length of the password we want to create.
     '''
-    length = input("Password Length: ")  
-    try:
-        length = int(length)
-        return length
-    except ValueError: 
-        return length
-    return length
+    while True:
+        try:
+            length = int(input("Password Length: "))
+            return length
+        except ValueError:
+            print('error')
+    # try:
+    #     length = int(length)
+    #     return length
+    # except ValueError: 
+    #     return length
+    # return length
 
 pass_len = pass_length()
 password = gen_pass(pass_len)
