@@ -30,7 +30,7 @@ def pass_length():
             length = int(input("Password Length: "))
             return length
         except ValueError:
-            print('Password Lenght must be a number: ')
+            print('Password Lenght must be a number! ')
 
 password = gen_pass(pass_length())
 print(password)
