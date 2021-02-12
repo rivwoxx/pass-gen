@@ -9,13 +9,8 @@ def gen_pass(length):
     '''
     
     '''
-    # if type(length) != int:
-    #     pswd="Length must be a Number"
-        
-    # elif length <= 8:
-    #     pswd="Must be longer than 8"
     if length <= 8:
-        pswd="Must be longer than 8"
+        pswd="Lenght must be longer than 8"
     else:
         strg = f'{letters}{numbs}{special_c}'
 
@@ -35,16 +30,9 @@ def pass_length():
             length = int(input("Password Length: "))
             return length
         except ValueError:
-            print('error')
-    # try:
-    #     length = int(length)
-    #     return length
-    # except ValueError: 
-    #     return length
-    # return length
+            print('Password Lenght must be a number: ')
 
-pass_len = pass_length()
-password = gen_pass(pass_len)
+password = gen_pass(pass_length())
 print(password)
 
 
